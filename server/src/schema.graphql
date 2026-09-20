@@ -1,0 +1,11 @@
+"""
+Individual task item
+"""
+type Task {
+  id: ID!
+}
+
+type Query {
+  "Fetch list of tasks"
+  tasks: [Task!]!
+}
