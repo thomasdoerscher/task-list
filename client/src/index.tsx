@@ -1,7 +1,11 @@
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { ApolloProvider } from "@apollo/client/react";
+import { Theme } from "@radix-ui/themes";
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { App } from "./App";
+
+import "@radix-ui/themes/styles.css";
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -15,7 +19,9 @@ const root = createRoot(document.getElementById("root")!);
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      Hello world
+      <Theme accentColor="bronze" grayColor="mauve">
+        <App />
+      </Theme>
     </ApolloProvider>
   </React.StrictMode>,
 );
